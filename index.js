@@ -16,7 +16,7 @@ module.exports.createClient = module.exports.connect = function(redis_url) {
   if (database = parsed_auth[0]) {
     redis.select(database);
     redis.on('connect', function() {
-      redis.send_anyways = true
+      redis.send_anyways = true;
       redis.select(database);
       redis.send_anyways = false;
     });
